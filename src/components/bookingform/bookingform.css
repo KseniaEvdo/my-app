@@ -1,0 +1,20 @@
+
+.formstyle {
+    display: grid;
+    max-width: 300px;
+    gap: 30px;
+    background-color: rgb(223, 232, 227);
+}
+.res-btn {
+    padding: 10px;
+    color: aliceblue;
+    background-color: rgb(44, 83, 70);
+}
+.inputResDate {
+    height: 20px;
+}
+.selectBooking{
+    padding: 20px;
+    font-size: 16px;
+    height: 30px; /* Увеличиваем высоту */
+}

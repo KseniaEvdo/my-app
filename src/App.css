@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+.hamburger {
+  width: 20px;
+  height: 20px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 0 20px;
+  justify-content: space-around;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar li {
+  margin: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 15px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Расположение элементов в столбец */
+    align-items: flex-start; /* Выравнивание в начало */
+    padding: 10px; /* Уменьшение отступов */
   }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar .logo {
+  margin-bottom: 10px; /* Отступ снизу логотипа */
+  margin-right: 0; /* Убираем правый отступ для логотипа */
+}
+.navbar ul {
+  flex-direction: column; /* Меню столбцом */
+  align-items: flex-start; /* Выравнивание элементов в начало */
+  padding: 0; /* Убираем внутренние отступы */
+}
+
+.navbar li {
+  margin-bottom: 8px; /* Отступ между элементами списка */
+}
+
+.navbar a {
+  padding: 8px 12px; /* Уменьшение отступов у ссылок */
+}
 }

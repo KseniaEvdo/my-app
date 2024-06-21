@@ -3,7 +3,6 @@
 const Footer = () => {
     return (
         <footer>
-            <img src="" alt="logo" />
         </footer>
     )
 }

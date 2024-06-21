@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <h1></h1>
+        <h1>This will be about Little lemon restaurant</h1>
     )
 }
 
