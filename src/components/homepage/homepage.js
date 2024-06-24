@@ -1,13 +1,10 @@
-import Header from "../header/header";
-import Main from "../main/main";
-import Footer from "../footer/footer";
+import React from 'react';
+import Main from '../main/main';
 
 const Homepage = () => {
     return (
         <div>
-            <Header />
             <Main />
-            <Footer />
         </div>
     );
 }
