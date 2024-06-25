@@ -1,10 +1,14 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Bookingpage from '../bookingpage/bookingpage';
 import Confirmedreservation from '../confirmedreservation/confirmedreservation';
 import Header from '../header/header';
 
 const Main = () => {
+
+ const [availableTimes, setAvailableTimes] = useState(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"])
+
+   
     const seededRandom = function (seed) {
         var m = 2**35 - 31;
         var a = 185852;
@@ -28,42 +32,34 @@ const Main = () => {
         }
         return result;
     };
-
     const submitAPI = function(formData) {
         return true;
     };
 
-    const initialState = fetchAPI(new Date());
-    const [availableTimes, dispatch] = useReducer(updateTimes, initialState);
+    const initialState = {availableTimes:  fetchAPI(new Date())}
+    const [state, dispatch] = useReducer(updateTimes, initialState);
 
-    function updateTimes(state, action) {
-        switch (action.type) {
-            case 'update':
-                return fetchAPI(new Date(action.date));
-            default:
-                return state;
-        }
+    function updateTimes(state, date) {
+        return {availableTimes: fetchAPI(new Date(date))}
     }
-
     const navigate = useNavigate();
-    function submitForm(formData) {
+    function submitForm (formData) {
         if (submitAPI(formData)) {
-            navigate("/confirmed");
+            navigate("/confirmed")
         }
     }
-
-    return (
+ console.log({state, dispatch, submit});
+    return(
         <main className="main">
             <Routes>
                 <Route path="/" element={<Header />} />
-                <Route 
-                    path="/booking" 
-                    element={<Bookingpage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} 
-                />
-                <Route path="/confirmed" element={<Confirmedreservation />} />
+                <Route path="/booking" element={<Bookingpage availableTimes={state} dispatch={dispatch} submitForm={submitForm}/>} />
+                <Route path="/confirmed" element={<Confirmedreservation/> } />
             </Routes>
         </main>
-    );
+
+
+    )
 }
 
 export default Main;

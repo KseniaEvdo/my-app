@@ -5,7 +5,6 @@ import Footer from './components/footer/footer';
 import About from './components/about/about';
 import Homepage from './components/homepage/homepage';
 import Menu from './components/menu/menu';
-import Reservation from './components/bookingform/bookingform';
 import Orderonline from './components/orderonline/orderonline';
 import Login from './components/login/login';
 import Bookingpage from './components/bookingpage/bookingpage';
