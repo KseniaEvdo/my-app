@@ -31,10 +31,9 @@ function App() {
         <Link to="/login" className="nav-item">Login</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/*" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/reservations" element={<Bookingpage />} />
         <Route path="/orderonline" element={<Orderonline />} />
         <Route path="/login" element={<Login />} />
       </Routes>

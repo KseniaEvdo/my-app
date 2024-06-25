@@ -16,15 +16,13 @@ const BookingForm = (props) => {
     }
 
     const handleChange = (e) => {
-    setDate(e.target.value);
-    if (props.dispatch) {
-        props.dispatch({ type: 'update', date: e.target.value });
-    } else {
-        console.error("Error: props.dispatch is not defined!");
+        setDate(e.target.value);
+        if (props.dispatch) {
+            props.dispatch({ type: 'update', date: e.target.value });
+        } else {
+            console.error("Error: props.dispatch is not defined!");
+        }
     }
-    
-}
-
 
     return (
         <header>
@@ -44,8 +42,8 @@ const BookingForm = (props) => {
                     onChange={(e) => setTime(e.target.value)} required
                 >
                     <option value="">Select time</option>
-                    {props.availableTimes && props.availableTimes.map((availableTimes, index) => (
-                        <option key={index} value={props.availableTimes}>{availableTimes}</option>
+                    {props.availableTimes && props.availableTimes.map((timeItem, index) => (
+                        <option value={timeItem} key={timeItem}>{timeItem}</option>
                     ))}
                 </select>
 
